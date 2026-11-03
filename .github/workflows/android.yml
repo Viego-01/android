@@ -50,11 +50,18 @@ jobs:
           swap-size-gb: 10
 
       - name: Paso 1 - Compilar a Cliente Android
-      
         run: mvn gluonfx:build -e -X
 
-      - name: Paso 2 - Empaquetar el APK
+      - name: Extraer logs de error de GraalVM
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: graalvm-error-logs
+          path: |
+            target/gluonfx/log/
+            target/gluonfx/**/gvm/log/
 
+      - name: Paso 2 - Empaquetar el APK
         env:
           ANDROID_SDK_ROOT: ''
         run: mvn gluonfx:package

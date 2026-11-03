@@ -40,10 +40,10 @@
         <mainClass>com.mycompany.nomina.App</mainClass>
         <!-- Obliga a incluir los archivos de interfaz e imágenes en el APK -->
         <resourcesList>
-          <list>.\.fxml$</list>
-         <list>.\.css$</list>
-         <list>.\.png$</list>
-         <list>.\.jpg$</list>
+          <list>.\\.fxml$</list>
+         <list>.\\.css$</list>
+         <list>.\\.png$</list>
+         <list>.\\.jpg$</list>
 </resourcesList>
         <!-- Permite que JavaFX inyecte código en tus controladores -->
         <reflectionList>
